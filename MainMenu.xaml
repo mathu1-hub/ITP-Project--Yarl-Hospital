@@ -1,0 +1,248 @@
+﻿<Window x:Class="YarlHospitalWPF.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YarlHospitalWPF"
+        mc:Ignorable="d"
+       Title="MainMenu" Height="941.32" Width="1003" Icon="Images/MainLogo.jpeg" WindowState="Maximized">
+
+    <Grid Background="#FF00A1F2">
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="4" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.9,0" >
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="Images/MainLogo.jpeg" Height="50" Width="211" Grid.Row="0" Grid.Column="0" Margin="10,5,0,5" HorizontalAlignment="Left"></Image>
+
+        <Label Content="WELCOME TO YARL HOSPITAL" HorizontalAlignment="Center" Grid.Row="3" FontSize="30" FontWeight="Bold" Foreground="White" Margin="330,14.6,202,10.4" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+
+        <Button x:Name="btnPatient" Content="Patient" Grid.Row="8" Grid.Column="0" Background="White" Cursor="Hand" Grid.RowSpan="2" FontSize="25" Margin="36,0,24,0" Foreground="White" Click="btnPatient_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#007BA1" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnAppointment" Content="Appointment" Grid.Row="8" Grid.Column="1" Cursor="Hand" Margin="30,0" Grid.RowSpan="2"  FontSize="25" Foreground="White" Click="btnAppointment_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#007BA1" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button x:Name="btnDrug" Content="Drug" Grid.Row="11" Cursor="Hand" Margin="36,0,24.4,-244.2"  FontSize="25"  Foreground="White"  Click="btnDrug_Click" Height="72" VerticalAlignment="Bottom">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#007BA1" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button x:Name="btnTreatment" Content="Treatment" Grid.Row="10" Grid.Column="0" Cursor="Hand" Margin="36,87,24,-128"  FontSize="25" Foreground="White" Click="btnTreatment_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#007BA1" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button x:Name="btnPayment" Content="Payment" Grid.Row="10" Grid.Column="1" Cursor="Hand" Margin="30,86,30,-127"  FontSize="25" Foreground="White" Click="btnPayment_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#007BA1" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button x:Name="btnReport" Content="Report" Grid.Row="10" Grid.Column="2" Cursor="Hand" Margin="42,86,27,-127"  FontSize="25"  Foreground="White" Click="BtnReport_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#007BA1" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Button x:Name="btnDoctor" Content="Doctor" Grid.Row="7" Grid.Column="2" Cursor="Hand" Margin="42.4,35.6,27,30.6"  FontSize="25" Foreground="White" Click="btnDoctor_Click" Grid.RowSpan="4">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#007BA1" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Label Content="Log Out" Grid.Column="2" Grid.Row="2" Foreground="White" FontWeight="Bold" Margin="266.4,24.6,0,11.4" Grid.RowSpan="2" HorizontalAlignment="Center" Width="64" MouseDoubleClick="Label_MouseDoubleClick" />
+
+        <Button x:Name="btnLogout"  FontStretch="Expanded" Grid.Column="2" Grid.Row="1" Margin="255,10,-12,10" Grid.RowSpan="2" Cursor="Hand" >
+
+            <Image Source="Images/user.png" RenderTransformOrigin="0.083,0.587" OpacityMask="#FFA84848"></Image>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="0,0,0,0" BorderThickness="0" >
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+
+
+        </Button>
+        <Button x:Name="btnEmail" Content="Send Email" Grid.Row="11" Grid.Column="1" Cursor="Hand" Margin="29.6,202.4,29.6,-244.2"  FontSize="25"  Foreground="White" Click="BtnEmail_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#007BA1" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+
+
+    </Grid>
+</Window>

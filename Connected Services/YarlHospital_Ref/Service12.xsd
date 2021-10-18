@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53000/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" />
+  <xs:element name="Add_Patient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nic" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tele" type="xs:int" />
+        <xs:element minOccurs="0" name="mob" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_PatientResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_patients">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_patientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="get_patientsResult" nillable="true" type="q1:ArrayOfPatient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="update_patient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nic" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tele" type="xs:int" />
+        <xs:element minOccurs="0" name="mob" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="update_patientResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="view_patient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="view_patientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="view_patientResult" nillable="true" type="q2:Patient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="searchResult" nillable="true" type="q3:ArrayOfPatient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_patient_name">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_patient_nameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_patient_nameResult" nillable="true" type="q4:ArrayOfPatient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_nic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nic" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_nicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_nicResult" nillable="true" type="q5:ArrayOfPatient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_patient_id">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_patient_idResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="get_max_patient_idResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="view_Patient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="view_PatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="view_PatientResult" nillable="true" type="q6:Patient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_Appointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="did" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tele" type="xs:int" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="time" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_AppointmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Appointment_List">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Appointment_ListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="Get_Appointment_ListResult" nillable="true" type="q7:ArrayOfAppointment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Appoinment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="did" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tele" type="xs:int" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="time" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_AppoinmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_AppointmentID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="apId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_AppointmentIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_by_AppointmentIDResult" nillable="true" type="q8:ArrayOfAppointment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_appointment_id">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_appointment_idResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="get_max_appointment_idResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="view_appointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="view_appointmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="view_appointmentResult" nillable="true" type="q9:Appointment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_drug">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drugID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="drugName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SciName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateManf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateExp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="price" type="xs:int" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_drugResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDrugs">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDrugsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="GetDrugsResult" nillable="true" type="q10:ArrayOfDrug" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Drug">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drugID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="drugName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SciName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateManf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateExp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="price" type="xs:int" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_DrugResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_Drugid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dgId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_DrugidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_by_DrugidResult" nillable="true" type="q11:ArrayOfDrug" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_Drugname">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dgname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_DrugnameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_by_DrugnameResult" nillable="true" type="q12:ArrayOfDrug" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_ExpiryDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dgExp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_ExpiryDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_by_ExpiryDateResult" nillable="true" type="q13:ArrayOfDrug" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_drug_id">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_drug_idResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="get_max_drug_idResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_Drugs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_DrugsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="View_DrugsResult" nillable="true" type="q14:Drug" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_Treatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fullname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="visitdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="diagnos" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nxtvisitdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nxtvisittime" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="drugused" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="timesperday" type="xs:int" />
+        <xs:element minOccurs="0" name="numofdays" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add_TreatementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Treatements">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_TreatementsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="Get_TreatementsResult" nillable="true" type="q15:ArrayOfTreatment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Treatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fullname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="visitdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="diagnos" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nxtvisitdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nxtvisittime" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="drugused" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="timesperday" type="xs:int" />
+        <xs:element minOccurs="0" name="numofdays" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_TreatementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_TreatmentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_TreatmentIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_by_TreatmentIdResult" nillable="true" type="q16:ArrayOfTreatment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_TR_PatientName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="trName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_by_TR_PatientNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_by_TR_PatientNameResult" nillable="true" type="q17:ArrayOfTreatment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_treatment_id">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_treatment_idResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="get_max_treatment_idResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_Treatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_TreatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="View_TreatementResult" nillable="true" type="q18:Treatment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_doctor_list">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_doctor_listResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="get_doctor_listResult" nillable="true" type="q19:ArrayOfDoctor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_doctor_id">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_doctor_idResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="get_max_doctor_idResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="add_Doctor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="spec" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" type="xs:int" />
+        <xs:element minOccurs="0" name="nic" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="add_DoctorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_doctor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="spec" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" type="xs:int" />
+        <xs:element minOccurs="0" name="nic" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_doctorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_DoctorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_DoctorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_DoctorIdResult" nillable="true" type="q20:ArrayOfDoctor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_DoctorName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_DoctorNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_DoctorNameResult" nillable="true" type="q21:ArrayOfDoctor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_DoctorNIC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Nic" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_DoctorNICResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_DoctorNICResult" nillable="true" type="q22:ArrayOfDoctor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_Doctor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_DoctorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="View_DoctorResult" nillable="true" type="q23:Doctor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="add_new_payment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="payid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="totamount" type="xs:int" />
+        <xs:element minOccurs="0" name="payamount" type="xs:int" />
+        <xs:element minOccurs="0" name="balamount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="add_new_paymentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_all_payment">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_all_paymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="get_all_paymentResult" nillable="true" type="q24:ArrayOfPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="update_payment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="payid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="totamount" type="xs:int" />
+        <xs:element minOccurs="0" name="payamount" type="xs:int" />
+        <xs:element minOccurs="0" name="balamount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="update_paymentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delete_payment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="payid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delete_paymentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_PaymentID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="txt" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="search_PaymentIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="search_PaymentIDResult" nillable="true" type="q25:ArrayOfPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_payment_id">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="get_max_payment_idResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="get_max_payment_idResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_Payment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="payID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="View_PaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/YarlHospitalWCF" minOccurs="0" name="View_PaymentResult" nillable="true" type="q26:Payment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="create_account">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="full_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="user_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="r_password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="s_question" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="answer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="login_type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="create_accountResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
