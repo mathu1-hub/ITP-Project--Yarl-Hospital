@@ -1,0 +1,334 @@
+﻿<Window x:Class="YarlHospitalWPF.Appointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YarlHospitalWPF"
+        mc:Ignorable="d"
+        Title="Appointment" Width="1397" Height="746" WindowState="Maximized" Icon="Images/MainLogo.jpeg" ResizeMode="CanMinimize" >
+    <Grid Background="#FF00A1F2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="2" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.9,0" >
+                    <GradientStop Color="White" Offset="0"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="Images/MainLogo.jpeg" Width="110" Grid.Row="0" Grid.Column="0" Margin="10,5,0,5" HorizontalAlignment="Left"/>
+
+
+        <TabControl HorizontalAlignment="Left" Height="643" Width="1465.4" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,-74.4,0">
+
+
+            <TabItem Header="Appointment" Background="#FF00A1F2" Foreground="Black" Height="40" Width="150" FontSize="15" BorderBrush="White" Cursor="Hand">
+                <Grid Background="#FF00A1F2" Margin="-6,-2,-62,-23">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="92*"></ColumnDefinition>
+                        <ColumnDefinition Width="136*"></ColumnDefinition>
+                        <ColumnDefinition Width="36*"/>
+                        <ColumnDefinition Width="9*"></ColumnDefinition>
+                        <ColumnDefinition Width="108*"/>
+                        <ColumnDefinition Width="382*"></ColumnDefinition>
+                        <ColumnDefinition Width="382*"></ColumnDefinition>
+                        <ColumnDefinition Width="382*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Appointment Entry Form" Grid.Column="5" Grid.Row="1" Foreground="White" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center" Width="369" Margin="246.4,0.2,148.6,32" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="btnLogout1"  FontStretch="Expanded" Grid.Column="7" Grid.Row="0" Margin="271.4,24,26,36.4" Cursor="Hand" Grid.RowSpan="2" >
+
+                        <Image Source="Images\user.png"></Image>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="0,0,0,0" BorderThickness="0" >
+                                    <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+
+
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+
+                    </Button>
+                    <Label Content="LOGOUT" Grid.Column="7" Foreground="White" FontWeight="Bold" Margin="272.4,0.2,27,37" HorizontalAlignment="Center" Grid.Row="1" Width="83" Grid.RowSpan="2" />
+
+
+
+
+
+                    <Button x:Name="btnAddAppointment1" Content="Add"  Foreground="White" BorderBrush="White" Grid.Row="11" Width="80" BorderThickness="2" Margin="256.4,1.2,0,38.4" Grid.Column="5" HorizontalAlignment="Left" Grid.RowSpan="2" Click="BtnAddAppointment1_Click" >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                                    <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="False"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+
+                    <Button x:Name="btnUpdateAppointment1" Content="Update"  Foreground="White" BorderBrush="White" Grid.Row="11"  Width="80" BorderThickness="2" Margin="0,1.2,272.6,40.4" Grid.Column="6" HorizontalAlignment="Right" Click="BtnUpdateAppointment1_Click" Grid.RowSpan="2">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                                    <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="False"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="btnClear" Content="Clear"  Foreground="White" BorderBrush="White" Grid.Row="11" Width="70" BorderThickness="2" Margin="194,1.2,117.6,39.4" Grid.Column="6" Click="BtnClear_Click" RenderTransformOrigin="0.3,0.569" Grid.RowSpan="2" >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                                    <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="False"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Label Content="Appointment ID" Grid.Column="5" Grid.Row="3" Foreground="White" FontSize="15" FontWeight="Bold" Margin="8.4,6,0,40.2" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+                    <Label Content="Doctor ID" Grid.Column="5" Grid.Row="4" Foreground="White" FontSize="15" FontWeight="Bold" Margin="8.4,6.4,0,40.8" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+                    <Label Content="Patient ID" Grid.Column="5" Grid.Row="5" Foreground="White" FontSize="15" FontWeight="Bold" Margin="8.4,5.8,0,35.6" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+                    <Label Content="Patient Name" Grid.Column="5" Grid.Row="6" Foreground="White" FontSize="15" FontWeight="Bold" Margin="8.4,3.2,0,38.4" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+                    <Label Content="Contact Number" Grid.Column="5" Grid.Row="7" Foreground="White" FontSize="15" FontWeight="Bold" Margin="8.4,1.4,0,0.4" HorizontalAlignment="Left"/>
+                    <Label Content="Date" Grid.Column="5" Grid.Row="8" Foreground="White" FontSize="15" FontWeight="Bold" Margin="10.4,0.6,0,0.2" HorizontalAlignment="Left"/>
+                    <DatePicker x:Name="txtAppointmentDate" Grid.Row="8" Grid.Column="6" Margin="0,7.6,382,0.2" Grid.ColumnSpan="2"/>
+                    <Label Content="Time" Grid.Column="5" Grid.Row="9" Foreground="White" FontSize="15" FontWeight="Bold" Margin="8.4,5.8,246,5"/>
+                    <TextBox x:Name="txtAID" Grid.Column="6" Grid.Row="3" Margin="0,13,382,9.6" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnAddAppointment" Content="+" FontSize="30" Foreground="White" Grid.Column="7" Grid.Row="3" Margin="5.4,0,271,45.2" Click="BtnAddAppointment_Click" Grid.RowSpan="2">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                                    <ContentPresenter Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="False"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <TextBox x:Name="txtDID" Grid.Column="6" Grid.Row="4" Margin="0,13.4,382,9.2" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtPID" Grid.Column="6" Grid.Row="5" Margin="0,12.8,382,9.8" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtPName" Grid.Column="6" Grid.Row="6" Margin="0,10.2,382,8.6" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtContactNumber" Grid.Column="6" Grid.Row="7" Height="21" Margin="0,10.4,382,9.4" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txttime" Grid.Column="6" Grid.Row="9" Height="21" Margin="0,10.8,382,9" Grid.ColumnSpan="2"/>
+
+                    <Button x:Name="btnback2" Content="Back" Width="80" FontSize="15" FontStretch="Expanded" Grid.Column="0" Margin="26,10,122,9.8" Foreground="White" Click="Btnback2_Click" Grid.ColumnSpan="2">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="0,0,0,0" BorderThickness="2"  BorderBrush="White">
+                                    <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF1D2442" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF1D2442" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="Black" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+
+                    </Button>
+                    <Button x:Name="btnViewAppointment" Content="View"  Foreground="White" BorderBrush="White" Grid.Row="11" Width="80" BorderThickness="2" Margin="111.4,1.2,0,38.4" Grid.Column="5" HorizontalAlignment="Left" Grid.RowSpan="2" Click="BtnViewAppointment_Click" >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                                    <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="False"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Appointment List" Background="#FF00A1F2" Foreground="Black" Cursor="Arrow" Height="40" Width="150" FontSize="15" BorderBrush="White" BorderThickness="3">
+                <Grid Background="#FF00A1F2" Margin="-11,0,15,-22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="239*"></ColumnDefinition>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="291*"></ColumnDefinition>
+                        <ColumnDefinition Width="291*"></ColumnDefinition>
+                        <ColumnDefinition Width="291*"></ColumnDefinition>
+                        <ColumnDefinition Width="291*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="AppointmentList" Content="Appointment List" Grid.Column="3" Grid.Row="1" Foreground="White" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center" Margin="17.6,0.2,17.6,30" Grid.RowSpan="2"/>
+                    <Button x:Name="btnLogout"  FontStretch="Expanded" Grid.Column="5" Grid.Row="0" Margin="204.2,10,39,10.4"  Grid.RowSpan="2" Cursor="Hand" >
+
+                        <Image Source="Images\user.png"></Image>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="0,0,0,0" BorderThickness="0" >
+                                    <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+
+
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+
+                    </Button>
+                    <Label Content="LOGOUT" Grid.Column="5" Foreground="White" FontWeight="Bold" Margin="191.2,0.2,31,36" Grid.RowSpan="2" HorizontalAlignment="Center" Width="69" Grid.Row="1" />
+                    <Label x:Name="AppointmentID" Content="Appointment ID" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" Foreground="White" FontWeight="Bold" FontSize="15" Margin="0,7,70.4,2.6" Width="131"></Label>
+                    <TextBox x:Name="txtAppointmentID" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch" Margin="290.8,10,290.8,8.6" Grid.ColumnSpan="3" TextChanged="TxtAppointmentID1_TextChanged_1" />
+
+                    <GroupBox Header="Appointment List" Width="1000" HorizontalAlignment="Left" Margin="181,9.8,0,0" VerticalAlignment="Top" Height="230"  FontSize="14" Grid.ColumnSpan="6" Grid.Row="5" Grid.RowSpan="6">
+                        <DataGrid x:Name="dataGridappointment" Height="187"  VerticalAlignment="Top" Grid.Row="4" IsReadOnly="True" AutoGenerateColumns="False" Grid.ColumnSpan="5" Margin="27,10,20,0" Grid.RowSpan="4" SelectionChanged="DataGridappointment_SelectionChanged">
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Appointment_ID}" Header="AID" Width="160" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding Patient_ID}" Header="PID" Width="160" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding Full_Name}" Header="Patient Name" Width="160" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding Telephone}" Header="Phone" Width="160" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="160" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding Time}" Header="Time" Width="160" IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+
+                    <Button x:Name="btnback1" Content="Back"  Width="80" FontSize="15" FontStretch="Expanded" Grid.Column="0" Margin="29,10,130.1,9.8" Foreground="White" Click="Btnback1_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border x:Name="Border" CornerRadius="0,0,0,0" BorderThickness="2"  BorderBrush="White">
+                                    <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="true"/>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF1D2442" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="true">
+                                        <Setter TargetName="Border" Property="Background" Value="#FF1D2442" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="Black" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+
+
+                    </Button>
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</Window>

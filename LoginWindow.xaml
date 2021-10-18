@@ -1,0 +1,126 @@
+﻿<Window x:Class="YarlHospitalWPF.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YarlHospitalWPF"
+        mc:Ignorable="d"
+        Title="LoginWindow" WindowState="Maximized" Height="661.4" Width="933.175" Icon="Images/MainLogo.jpeg" ResizeMode="CanMinimize" WindowStyle="SingleBorderWindow">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="26*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Rectangle Grid.Column="2" Grid.ColumnSpan="4" Grid.RowSpan="9">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.9,0" >
+                    <GradientStop Color="#FF00A1F2" Offset="0"/>
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Label Content="Please sign in to get access" Grid.Column="3" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" FontFamily="calibri" Grid.Row="2" Foreground="White" FontSize="24"></Label>
+        <Label Content="LOGIN" Grid.Column="3" Grid.ColumnSpan="2" FontSize="35" FontWeight="Bold" HorizontalContentAlignment="Center" Foreground="White" Grid.Row="1"/>
+        <Label Content="User Name" Grid.Column="3" Grid.Row="3" Foreground="White" FontSize="25" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <Label Content="Password" Grid.Column="3" Grid.Row="4" Foreground="White" FontSize="25" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="36.6,1.4,17.4,69.4" Grid.RowSpan="2"/>
+        <Label Content="Type Of Login" Grid.Column="2" Grid.Row="5" Foreground="White" FontSize="25" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="57.8,1,10.4,69" Grid.RowSpan="2"/>
+
+
+        <TextBox x:Name="txtUsername" Grid.Column="4" Grid.Row="3" Height="32" FontSize="17" HorizontalAlignment="Stretch" BorderBrush="#003399" Margin="0,9,10,26"/>
+        <PasswordBox x:Name="txtPassword" Grid.Column="4" Grid.Row="4" Height="32" FontSize="17" HorizontalAlignment="Stretch" BorderBrush="#003399" Margin="0,8,10,27"/>
+
+        <ComboBox x:Name="cmbtypelogin" Grid.Column="4" Height="32" Grid.Row="5"  HorizontalAlignment="Stretch" FontSize="15" BorderBrush="#003399" Margin="0,7,10,28" SelectionChanged="Cmbtypelogin_SelectionChanged">
+            <ComboBoxItem Content="Doctor"/>
+            <ComboBoxItem Content="Receptionist"/>
+            <ComboBoxItem Content="Admin"/>
+        </ComboBox>
+
+        <Button x:Name="btnButton"  Content="LOGIN" Grid.Column="3" Grid.Row="6"  Click="BtnButton_Click" BorderBrush="White" FontSize="15" Foreground="White" HorizontalAlignment="Stretch" Grid.ColumnSpan="2" Cursor="Hand" Margin="118.6,9.6,94.4,10">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF466CD3" Offset="1"/>
+                    <GradientStop Color="#FF5161FB"/>
+                    <GradientStop Color="#FF5F73F7" Offset="0.263"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="False"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Image Source="Images/MainLogo.jpeg" Grid.ColumnSpan="2" Grid.Row="3" Margin="10,0,0,38" Grid.RowSpan="3"></Image>
+
+        <Button x:Name="btncreate" Content="Create Account" Grid.Column="4" Grid.Row="7" Margin="0,11,42.4,10.4" HorizontalAlignment="Right" Click="Btncreate_Click" BorderBrush="White" Foreground="White" Grid.ColumnSpan="2" Width="106">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF466CD3" Offset="1"/>
+                    <GradientStop Color="#FF5161FB"/>
+                    <GradientStop Color="#FF5F73F7" Offset="0.263"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" CornerRadius="16,16,16,16" BorderThickness="1"  BorderBrush="White">
+                        <ContentPresenter Margin="6" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="False"></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="#FF5161FB" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#FF6262EA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+
+    </Grid>
+</Window>
