@@ -173,16 +173,16 @@ namespace YarlHospitalWPF
             }
         }
 
-        // private void BtnClear_Click(object sender, RoutedEventArgs e)
-        // {
-        //     txtAID.Text = "";
-        //     txtDID.Text = "";
-        //     txtPID.Text = "";
-        //     txtPName.Text = "";
-        //     txtContactNumber.Text = "";
-        //     txtAppointmentDate.Text = "";
-        //     txttime.Text = "";
-        // }
+         private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+             txtAID.Text = "";
+             txtDID.Text = "";
+             txtPID.Text = "";
+             txtPName.Text = "";
+             txtContactNumber.Text = "";
+             txtAppointmentDate.Text = "";
+             txttime.Text = "";
+         }
 
         private void DataGridappointment_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
